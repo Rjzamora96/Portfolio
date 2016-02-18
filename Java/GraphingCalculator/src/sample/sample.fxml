@@ -1,0 +1,28 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+
+<GridPane fx:controller="sample.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+    <padding><Insets top="10" bottom="10" left="10" right="10"></Insets></padding>
+    <Text text="Y = " GridPane.columnIndex="0" GridPane.rowIndex="0"></Text>
+    <TextField fx:id="function" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="0"></TextField>
+    <Text fx:id="error" text="Error! Invalid function!" GridPane.columnIndex="3" GridPane.rowIndex="0" visible="false"></Text>
+    <Button text="Graph" GridPane.columnIndex="0" GridPane.rowIndex="1" onAction="#handleGraphButtonAction"></Button>
+    <Button text="Clean" GridPane.columnIndex="1" GridPane.rowIndex="1" onAction="#handleClearButtonAction"></Button>
+    <Button text="-" GridPane.columnIndex="2" GridPane.rowIndex="1" onAction="#handlePlusButtonAction"></Button>
+    <Button text="+" GridPane.columnIndex="3" GridPane.rowIndex="1" onAction="#handleMinusButtonAction"></Button>
+    <LineChart fx:id="giraffe" GridPane.columnIndex="0" GridPane.columnSpan="4" GridPane.rowIndex="2" GridPane.rowSpan="3" legendVisible="false" createSymbols="false">
+        <xAxis>
+            <NumberAxis fx:id="xAxis" label="X" lowerBound="-5" upperBound="5" minorTickVisible="false" tickMarkVisible="false" tickUnit="1" autoRanging="false"></NumberAxis>
+        </xAxis>
+        <yAxis>
+            <NumberAxis fx:id="yAxis" label="Y" lowerBound="-5" upperBound="5" minorTickVisible="false" tickMarkVisible="false" tickUnit="1" autoRanging="false"></NumberAxis>
+        </yAxis>
+    </LineChart>
+</GridPane>
